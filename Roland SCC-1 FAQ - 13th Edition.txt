@@ -1280,7 +1280,7 @@ Thats it.
 >>>>>>>>>>>>>>>>>>>>>>>>>     END OF FAQ     <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 ,----------------------,----------------------------------------------,
 |-----    ,--          |Tal Barenboim, Technical Consultant.          |
-|  |      |__'         |taltalon@gmail.com                       |
+|  |      |__'         |taltalon@gmail.com                            |
 |  |al    |__'arenboim |Roland SCC-1 FAQ Author,@comp.ibm.pc.soundcard|
 `----------------------'----------------------------------------------'
 
