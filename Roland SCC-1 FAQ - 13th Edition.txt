@@ -7,7 +7,7 @@
 =============F r e q u e n t l y   A s k e d   Q u e s t i o n s=============
 --------------------------13th Edition 12/16/94-------------------------------
 	      Roland's SCC-1 Frequently Asked Questions.
-      (C) Copyright by Tal Barenboim, talb@zeus.datasrv.co.il
+      (C) Copyright by Tal Barenboim, taltalon@gmail.com
 -----------------------------------------------------------------------------
 This FAQ, answers several questions regarding Roland's SCC-1 sound card.
 Some parts of this FAQ were quoted from the SCC-1 Manual, which is 
@@ -1280,7 +1280,7 @@ Thats it.
 >>>>>>>>>>>>>>>>>>>>>>>>>     END OF FAQ     <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 ,----------------------,----------------------------------------------,
 |-----    ,--          |Tal Barenboim, Technical Consultant.          |
-|  |      |__'         |talb@zeus.datasrv.co.il                       |
+|  |      |__'         |taltalon@gmail.com                       |
 |  |al    |__'arenboim |Roland SCC-1 FAQ Author,@comp.ibm.pc.soundcard|
 `----------------------'----------------------------------------------'
 
