@@ -1,0 +1,1288 @@
+=============================================================================
+                     ///////  ///////  ///////      //
+                    //       //       //         ////
+                   ///////  //       //     ///   //
+                       //  //       //           //
+                 ///////  ///////  ///////    //////
+=============F r e q u e n t l y   A s k e d   Q u e s t i o n s=============
+--------------------------13th Edition 12/16/94-------------------------------
+	      Roland's SCC-1 Frequently Asked Questions.
+      (C) Copyright by Tal Barenboim, talb@zeus.datasrv.co.il
+-----------------------------------------------------------------------------
+This FAQ, answers several questions regarding Roland's SCC-1 sound card.
+Some parts of this FAQ were quoted from the SCC-1 Manual, which is 
+Copyrighted by Roland Corp.
+-----------------------------------------------------------------------------
+This Document is LOOOONG. Around 1100 lines, 41K big.
+It is recommended to save it to a file and then read it.
+-----------------------------------------------------------------------------
+Lines that start with a ">>>" are NEW/Important information that was added
+
+---------------------------------Legal Stuff---------------------------------
+I (Tal Barenboim), am not a representative of Roland Corp. Nor Related
+to Roland Corp. I do not charge money for this FAQ. 
+The FAQ was created due to many requests on the comp.ibm.pc.soundcard
+news group for information on the SCC-1.
+
+You are encouraged to distribute this FAQ to whom ever needs it.
+You are not allowed to change ANYTHING in this FAQ !
+
+You are not allowed to bundle this document , nor sell it with the SCC-1
+or any other Sound Canvas module without prior contacting me.
+
+If you need to quote part(s) from this FAQ, please contact me first.
+
+Tal Barenboim, will not be liable for any damage, loss of data, or
+any other related "problems", due to misuse of this FAQ/DOCUMENT.
+
+You take your own risk, when reading this FAQ.
+-----------------------------------------------------------------------------
+
++--------------------------->>----WARNING-----<<----------------------------+
+|       ADAPTEC SCSI Controller owners, please READ this FAQ completely     |
+|       before making your purchase. Check Question #17                     |
++---------------------------------------------------------------------------+
+
+--------------------Reaching/Contacting Tal Barenboim------------------------
+
+Internet Email - taltalon@gmail.com
+-----------------------------------------------------------------------------
+
+-----------------------------About The Author--------------------------------
+I was asked several times if I am a musician or a MIDI technician.
+
+Well here goes: - I'm not a MIDI technician :) , I do however have
+a diploma from a well known conservatory (music school)
+in Israel for finishing 8 years of Classical Organ (like the one in churches) 
+practice.
+
+I'm working now as a Technical consultant for PCs.
+mainly dealing with Sound Boards, CD-ROMS, PC hardware and software.
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+Thanks to Yoav Cohen Sivan for correcting NUMEROUS typos, and
+grammar mess-ups. [Well, my English sux :) ]
+-----------------------------------------------------------------------------
+
+END of legal talk. let's start rockin'!
+
+
+FAQ HISTORY
+===========
+
+ 12-09-94 - Added - "Is there a way i can 'preview' a Roland Sound Canvas
+                     without buying one ?"  - See Question #25
+
+ 10-27-94 - >>> MAJOR UPDATE <<< - Apparently NEWER SCC-1 and SCC-1Bs have a 
+            a total of 354 TONES ! Like the new SCDB-15 for the SB16 !
+            SEE APPENDIX H !!!
+
+  9-26-94 - fixed descriptions of the SCDB-15/10, added LAPC-1/MT-32
+            SC-55/mkII and SC-88
+
+  8-29-94 - Added ID Software's quote regarding the Sound Canvas
+            fixed the MT-32 Compatibility issue again, [ got more exact
+                  info regarding the MT-32 Compatibility from the SCC-1B
+                  Utility Diskette ]
+            Added What does the UTILITY diskette contain ?
+                  [Read this. The SCC-1 can emulate Roland's CM-64
+                   in addition for the MT-32]
+            fixed the logo again :)
+
+  8-18-94 - Added What is the MPU-401 unit ?
+	    added What is a SYSEX Message ?
+	    fixed the FAQ HISTORY. NEW Revisions appear first.
+	    changed the logo of this FAQ.
+
+  8-07-94 - Called up Yoav, to fix my FAQ :) (grammar issues)
+
+  8-06-94 - Added APPENDIX G - Where to get the SCC-1/B cheap.
+		  [forgot to add this to the 7th Edition].
+
+  8-04-94 - Added APPENDIX F - Does the SCC-1 have some DOWN sides ?
+	    Added CompuServe ID # for E-mail
+	    Added Roland Corp. reply for my ROM Size question.
+	    fixed several mistakes, due to some feedback from other
+		  users.
+	    fixed Understanding GM
+
+  7-22-94 - Added APPENDIX A - GS Parameters that can be tweaked.
+	    Added APPENDIX B - Voice Reserve and Part Sound Priority scheme.
+	    Added APPENDIX C - MIDI Players Warnings
+	    Added APPENDIX D - MIDI File Types.
+	    Added APPENDIX E - Effects.
+
+  7-21-94 - Added ADAPTEC controller warning/advice.
+	    Added LEGAL TALK stuff in the beginning of the FAQ.
+	    fixed MT-32 compatibility section.
+	    added Some tips before installing the card.
+  7-20-94 - Added Aftertouch SYSEX examples - PLEASE TELL ME IF IT WORKS!
+
+  7-17-94 - Added SYSEX examples
+	    Added Roland Corp. FAX numbers.
+	    fixed the location of GSRESET.ZIP
+
+   7-6-94 - Added Understanding GM
+	    added MT-32 compatibility
+	    added Roland's Address
+	    fixed SCC-1B description
+
+   7-1-94 - Fixed a LOT of typing errors.
+	    added some info about SCC-1 and onboard Mixers
+	    on sound cards like the PAS/16 SB16...
+	    added info on where to get utilities for the SCC-1.
+
+  6-25-94 - Initial Release.
+
+
+-----------------------------------------------------------------------------
+
+INDEX OF QUESTIONS/ANSWERS
+==========================
+
+	1. What is the Roland Sound Canvas ?
+	2. What is the SCC-1 ?
+	3. What is GS anyway ???
+	4. What is the MPU-401 ?
+	5. What is a SYSEX message ?
+	6. Tips before installing the SCC-1
+	7. Specifications.
+	8. Understanding GM
+	9. MT 32 Compatibility
+       10. Software/Games and the SCC-1
+       11. Do I need any drivers for running some games ?
+       12. What are RAP-10/SC-7/SC-55/SCD-10/15 modules ?
+       13. Does it work with other cards ? i.e. PAS16/SB ?
+       14. How can I control the Effects of the SCC-1 ?
+       15. SYSEX Messages examples, taken from the SCC-1 Manual.
+       16. What is Roland SCC-1B ?
+       17. Does the SCC-1 require a DMA/IRQs ?
+       18. What does the UTILITY Diskette contain ?
+       19. What is in the SCC-1 package ?
+       20. Does the SCC-1 support MIDI Aftertouch ?
+       21. Does GS SYSEX and the effects work in DOS and in Windows ?
+       22. Does the sound quality of SCC-1 reduces when I connect
+	   it through a 2nd sound card ?
+       23. Are there any utilities for SCC-1 that I should get ?
+       24. Where to get more information about the SCC-1 and other Roland
+	   equipment.
+       25. Is there a way i can "preview" a Roland Sound Canvas without
+           buying one ?
+
+       APPENDIX A - GS Parameters that can be tweaked.
+       APPENDIX B - Voice Reserve and Part Sound Priority scheme.
+       APPENDIX C - MIDI Players Warnings
+       APPENDIX D - MIDI File Types.
+       APPENDIX E - Effects.
+       APPENDIX F - Does the SCC-1 has some DOWN sides ?
+       APPENDIX G - Where to get the SCC-1, cheap (US ONLY)
+       APPENDIX H - The Mystery of the lost Patches !
+
+1. What is the Roland Sound Canvas ?
+====================================
+
+    The Roland Sound Canvas are a family of sound modules for professional
+    musicians.
+
+    They include very high quality sound samples stored in memory,
+    which gives different sound then the well known FM synthesis used in
+    SB and compatibles.
+
+
+2. What is the SCC-1 ?
+======================
+
+    The SCC-1 is the CARD type of the Sound Canvas module, it is an
+    8-bit (ISA Specifications, NOT TO BE CONFUSED WITH Samples depth)
+    card with an onboard MPU-401 unit for processing midi commands,
+    4 banks of GS instruments,General MIDI and GS Compatible.
+
+    Samples are stored in ROM, using 4MB , Uncompressed.
+    (I wasn't able to verify the 4MB size, if anyone can Verify it with
+    Roland Corp. it will be great.)
+
+    David Cole (dcole@ub.d.umn.edu) claims that the Keyboard magazine
+    mentioned that the SC-55 (the Original Sound Canvas) has
+    3MB of ROM, thus the SCC-1 must have the same size.
+
+    This question remains open, unless I get information directly
+    from Roland Corp.
+
+	    >>> Well, I FAXED to Roland Corp. In the US.
+		I asked for information regarding the ROM Size,
+		and if possible the Frequency/bit depth that the samples
+		are played back.
+
+		One Month later, I got a reply from Roland Corp. JAPAN !
+		from Toshi Ikeda.
+
+		Well, Roland will NOT and NEVER WILL reveal any information
+		regarding their WaveTable synthesis techniques.(DAMN!)
+
+		As you see, this question remains open, unless
+		I find any other solid information.
+
+    
+    The SCC-1 is also MT-32 compatible, but does not understand
+    MT-32 SYSEX messages.
+
+3. What is GS anyway ???
+========================
+
+   I will quote the GS standard from the SCC-1 manual:
+
+  "The GS Format is Roland's universal set of specifications which were
+   formulated in the interest of standardizing the way in which sound
+   generating devices will operate when MIDI is used for the performance
+   of music. If you use a sound generating unit which carries the GS logo,
+   you will be able to faithfully reproduce any commercially available song
+   data which also carries the GS logo." (page 1 ) of the manual.
+
+   More quotations:
+
+  "The GS Format is a standardized set of specifications of Roland's sound
+   sources unique specifications for sounds and the functions available for
+   Tone editing and effects (chorus & reverb), and other specifications
+   concerning the manner in which sound sources will respond to MIDI
+   messages.
+   Any device that is equipped with GS Format sound sources can faithfully
+   reproduce GS Music Data (Music data created under the GS format)."
+							(page 15)
+
+4. What is the MPU-401 ?
+========================
+
+The MPU-401 is a MIDI Processing unit created by Roland Corp.
+
+This unit's job is to understand and execute midi commands.
+The Unit works in two modes: Smart MODE (Command mode), and DUMB Mode (UART).
+
+For 100% MPU-401 compatibility your sound board MPU unit must support 
+BOTH these modes, otherwise compatibility problems will occur.
+
+Many other cards that support only DUMB Mode encounter problems with
+software that were written for the MT-32.
+Apparently using the MT-32 requires your MIDI card to "talk" in
+Smart Mode (Command mode).
+
+Cards like the SB16, Pro Audio Spectrum 16 support only DUMB Mode with their
+MPU-401 unit onboard, thus daughter board cards like the WaveBlaster or
+the Roland SCD-1x will have compatibility problems when a game or an
+application will try to receive/send in Smart Mode (Command mode).
+
+Some cards like Turtle Beach's Multisound do not include an MPU-401.
+They do have a MIDI processor but it is proprietary.
+
+The SCC-1 has a 100% Compatible MPU-401 unit onboard.
+
+5. What is SYSEX ???
+====================
+
+SYSEX stands for System Exclusive. System Exclusive messages
+are a series of bytes that control the behavior of the sound module.
+
+Each Manufacture has its own format and different bytes to represent the
+parameters to be changed. Every SYSEX starts with the F0h Byte and
+ends with the F7h Byte.
+
+This means that we cannot for example send a Roland SYSEX message to
+an Ensoniq synthesizer because the Ensoniq synthesizer will not understand
+our message, it will ignore it instead :)
+
+Now, Most of Roland's new modules/synths now conform to the GS standard.
+This Means that any GS compatible device will understand and execute the
+SYSEX that was sent. This is a good reason to consider a GS module over
+non GS, proprietary standard.
+
+When the General MIDI specs were created it was agreed upon a special
+SYSEX that will Enable and Reset any compatible GM instrument.
+This SYSEX was called General MIDI System ON. Every GM Instrument
+must execute it.
+
+Author's Note: >>> If you intend to play your MIDI files on another
+		   module , it is highly recommended to include
+		   the General MIDI System ON SYSEX in your MIDI files.
+
+		   Many Sequencers like CakeWalk, Winjammer allow
+		   to include SYSEX messages to be Executed automatically
+		   when the MIDI is played.
+
+		   This will save you time when you figure out
+		   "how come this synth that has a GM logo, can't
+		   play my piece right !?"
+
+
+Refer to Questions 15,20 for more examples and descriptions of SYSEX messages
+
+Because of Roland status in the music/synthesizer market some companies
+like Creative Labs created their new cards (in this case the AWE32)
+compatible with the GS standard using a driver. The AWE32 is not
+GS compatible in hardware nor GM compatible in hardware.
+
+The AWE32 uses a 60K driver in DOS to emulate GM. and another special
+driver for Windows to emulate GS. In DOS the AWE32 DOES NOT understand
+GS SYSEX messages. (according to the AWE32 FAQ that was floating around)
+
+Also, for some reason Creative Labs disabled the SYSEX Checksum bit that
+Roland devices check for errors during transfer of data between two
+devices. All of Roland devices check for this Checksum, and you must
+calculate it yourself.
+
+
+6. Tips before installing the card.
+===================================
+
+   Well, the installation is a piece of cake, make sure
+   to install it as far as possible from the power supply, video cards
+   and HD controllers ( this is a general rule for every sound card).
+
+   Make sure not to touch those many CAPACITORS on the UPPER edges of
+   the card,I saw some guyz at the store almost damaging a card due to
+   bending the capacitors. Watch it !
+
+   Make sure you discharge your self prior to installing it.
+   The simplest way to discharge your self is to touch the DRIVE BAY
+   metal and touch a wall, or the ground.
+
+
+7. Specifications
+=================
+
+   Parts: 16
+
+   MAX. Polyphony : 24
+
+   Sounds/Tones : 317 voices / 354 Sounds - SEE APPENDIX H
+
+   Drum Sets : 9 Drum sets, Standard,Power,Electronic, TR-808,ROOM, Orchestra
+			    Jazz, CM-64/MT-32,SFX.
+
+   Ports : Headphones, MIDI IN/OUT, RCA Left, RCA Right.
+
+   Effects : Reverb/delay ,Chorus.
+	     Reverb: ROOM 1-3, Hall 1-2, Plate, Delay,Panning Delay
+	     Chorus: Chorus 1-4,Feedback Chorus,Flanger,Short Delay,Short
+		    Delay Feed back.
+
+   Compatibility : GM/GS 100% Compatible in HARDWARE i.e. NO DRIVERS.
+
+
+8. Understanding GM
+===================
+
+    After several talks with some dudes, I stand corrected.
+
+    The GM specs, define a primary bank of 128 Instruments and 1 (ONLY ONE)
+    drum set. GM Cards have ONE patch (SOUND) per Instrument.
+
+    Some cards, like the SCC-1 have MORE patches/sounds per instrument
+    and several other drum sets.
+
+    The SCC-1 has 317 patches (i.e. voices), and 9 Drum sets.
+
+    Now what's the difference between a PATCH and Instrument ???
+
+    Lets take Instrument #015 - Tubular Bells.
+    Now, the Tubular Bells belongs to the Chromatic percussion
+    category in the Tone table.
+
+    Instrument #015 default patch (i.e. VOICE) is Tubular Bells,
+    but this Instrument has a CC0 option (i.e. Bank switching
+    option), so if we will set CC0 to 8 (default value of
+    CC0 is always 0 ) we will get a Church Bell,
+    instead of the Tubular Bells.
+
+    OK So Far ?
+
+    This means that we cannot have a MIDI song with BOTH Tubular
+    Bells & Church Bell playing at the same time ON THE SAME CHANNEL
+    because they reside on a different BANK, on the SAME instrument,
+    when we switch to another BANK all sounds in that Instrument will change
+    to the bank number we specify.
+    You can play both Tubular bells and Church bell at the same time
+    if they ARE NOT on the same channel.
+
+    Thanks go to David Cole(dcole@ub.d.umn.edu) for correcting
+    me on this subject.
+
+    The advantage of the SCC-1 over other GM cards, other than 
+    that it has 317 patches and 9 Drum sets, is that ,it is a GS
+    compatible device. When a device is GS compatible
+    it means that this device can tweak almost any part
+    of the stored sounds (patches) on the card, this includes
+    changing the attack, envelope, pitch, and other characteristics
+    of the current patch we are using.
+    Also GS compatible devices have controls over the Reverb & Chorus
+    effects.
+
+9. MT-32 Compatibility
+======================
+
+    How can the SCC-1 be MT-32 Compatible ?
+
+    The SCC-1 doesn't have the SAME recorded PATCHES (voice) in memory
+    for the MT-32. (I never heard a MT-32 , some guyz told me it is not the
+		    same patches)
+
+    The SCC-1 DOES have a different bank (127) that includes the MT-32
+    presets that are not accessible in GM mode (bank 0).
+
+    In order to switch the SCC-1 to MT-32 mode we play a MID file that
+    contains MIDI SYSEX data.
+
+    The MIDI SYSEX commands replaces all 128 GS Capital tones with copies 
+    of the original MT-32 Presets, and then adjusts the pitch bend range from
+    the GS default of 2 semi-tones to the MT-32 default of 12 semi-tones. 
+
+    The SCC-1 also has a MT-32 Compatible Drum set.
+
+    Please understand, that software/games that will send SYSEX 
+    messages to re-program the patches of the MT-32, will not be executed
+    by the SCC-1. Thus several games like Strike Commander (version 1.4)
+    will have some BAD/NOT RIGHT instruments when using the SCC-1
+    in MT-32 mode.
+
+    Also, When evaluating other cards, do not waste your time on the MT-32
+    Emulation thingy. You WONT find a GM card (or a GS card) that is
+    100% compatible with MT-32, because they simply do not include
+    the heart of the MT-32 on those cards.
+    Further more, almost any new game that shows up from big companies
+    like LucasArt's, Micorprose, Sierra On line, Origin, support
+    General MIDI, or GS native support.
+
+
+
+
+10. Software/Games and the SCC-1
+================================
+
+    The SCC-1 works PERFECTLY with every game that supports General MIDI
+    or Direct/native GS support. Some NATIVE/GS supported games are
+    DOOM, AL-QADIM, Raptor, Hocus Pocus, The 7th Guest.....
+
+    For Software, any software (Sequencers) that support MPU-401
+    port, will work perfectly.
+
+    >>> I have mailed ID Software (makers of DOOM) for their recommendation
+        of the best MIDI card/module as playback device for their
+        music in their games. 
+        
+        American McGee answered:  "Roland Sound Canvas , no doubt."
+
+        I have asked for permission from American McGee to quote
+        his reply. As you can see he agreed.
+
+   
+        Thoes of you who wish to "preview" the SCC-1 and the Roland Sound
+        Canvas patches, can do this if they have The 7th Guest game.
+        On the 2nd CD, the music is recorderd ENTIERLY using a SC-55
+        with minor sound processing effects (i.e external mixers, effects
+        makers and so on are not used).
+        You can find the description of the songs on the CD, in the
+        7th Guest manual.
+
+
+
+11.  Do I need any drivers for running some games ?
+==================================================
+
+    The SCC-1 doesn't use ANY drivers in DOS when running games.
+    The only drivers that are being use are the one that are supplied with
+    the game you are playing. (For example - Miles Drivers).
+
+    In Windows the only driver needed is the one that comes with the Windows
+    diskette i.e. Roland MPU-401 driver.
+
+
+12. What are RAP-10/SC-7/SC-55/SCD-10/15 modules ?
+==================================================
+
+   RAP-10  - General MIDI compatible, can record and play digital
+             sound at studio quality.
+             Uses the SC-7 Synthesis, only GM compatible,
+             28 MAX polyphony. 128 Tones, 6 drum set.
+
+   SC-7/SCDB-10   - Roland's low cost General MIDI upgrade, only 128
+                    tones, 6 drum sets, 28 MAX polyphony. NOT GS compatible.
+                    The SC-7 is the External Module (in a box), while
+                    the SCDB-10 is the DaughterBoard for the SB-16 Wave-
+                    Blaster connector.
+
+   SC-55/SC-55mkII/SCDB-15 - The SC-55 is the Original Sound Canvas 
+                             from which the SCC-1 was created. Actually
+                             the SCC-1 is the SC-55 without its box.
+                             just the card itself.
+
+                             SC-55mkII is the new revised Sound Canvas
+                             engine, which have a default of 354
+                             instruments (the extra 37 instruments are 
+                             mainly effects). The new mkII standard
+                             now defines a 28 Max Polyphony instead
+                             of 24 of the original SC-55.
+                             There some minor changed is the MIDI 
+                             implementation of some controllers, but
+                             nothing spectacular.
+                            
+                             SCDB-15 is the SC-55mkii on a DoughterBoard
+                             for the SB-16 WaveBlaster connector.
+                             Pity that Roland do not have a stand-alone
+                             card. The SCDB-15 is GS compatible.
+                             Too bad it uses the onboard MPU-401 emulation
+                             of the SB-16 because its is not 100%
+                             compatible with the MT-32 mode, which requires
+                             a SmartMode commands to be 100% compatible.
+
+
+    SC-88   - The newest and the most sophisticated Sound Canvas
+              module. Comes with: 652 Tones, including 22 Drum sets,
+              2 SFX sets, 64! MAX Polyphony. The best canvas there is.
+              Price range from 850-900$ :).
+              The SC-88 is an External Module.. i.e in a BOX.
+   
+ According to Rich.H , the SCDB-10/SC-7 Patches are far from being as good
+ as the SCC-1/Other SCs, mainly due to ROM size reduction on those cards.
+ 
+
+   
+13. Does it work with other cards ? i.e. PAS16/SB ?
+==================================================
+
+   The SCC-1 works perfectly with other cards, I have tested it on
+   the Pro Studio 16. The only hardware you need is a RCA Left + RCA Right
+   cable with a MINI-PL that connects to the Line-in of the PAS 16.
+
+   Make sure you use your Original MVSOUND.SYS that came with your card !
+   MVSOUND 3.25 is beta and buggy and should not be used.
+   Some PAS16 have different mixers, thus when using different MVSOUND.SYS
+   it will set the card differently. Again, make sure you use the one
+   you got on the diskettes.
+
+
+14. How can I control the Effects of the SCC-1 ?
+===============================================
+
+    The Effects are controlled through SYSEX messages.
+
+    The simplest way to use the effects is to get a GS Sequencer,
+    one of the best (OR THE BEST) is the Cubase Score 1.0x from Stienberg
+
+    There are many GS Editors that allow you to change the effects
+    while playing a MIDI song. See Question # 21.
+
+    Remember: The moment you turn off/reset your machine, all of
+	      Effects and other parameters will be RESET
+	      to the SCC-1 power-on defaults.
+
+15. SYSEX Messages examples, taken from the SCC-1 Manual.
+=========================================================
+The SYSEX messages are 7bit HEX numbers.
+
+GS RESET SYSEX -> F0H 41H 10H 42H 12H 40H 00H 7FH 00H 41H F7H
+
+   Description of
+   bytes:
+		 F0H     Exclusive Status
+		 41H     ID Number   (41 = Roland)
+		 10H     Device ID   (Device ID Number=17)
+		 42H     Model ID    (GS)
+		 12H     Command ID  (DT1)
+		 40H     Address MSB
+		 00H     :
+		 7FH     Address LSB
+		 00H     Data        (GS Reset)
+		 41H     Checksum
+		 F7H     EOX         (End OF Exclusive)
+
+Please note: Every SYSEX messages have a checksum, which MUST be
+	     calculated by yourself. the SCC-1 DOES NOT IGNORE
+	     this checksum like other cards do (AWE32).
+	     The checksum is used to detect errors when communicating
+	     with other devices (mostly due to bad MIDI cables).
+
+Another Example:
+
+Set Reverb Macro to ROOM 3:  F0H 41H 10H 42H 12H 40H 01H 30H 02H 0DH F7H
+
+	     40H 01H 30H = The address of where the macro is
+	     02H = change the macro to ROOM 3
+	     0DH = the Checksum.
+
+The Checksum is Calculated like this:
+		    40H+01H+30H+02H=64+1+48+2=115(sum)
+		    115(sum) /128 = 0(quotient)...115(remainder)
+		    checksum=128 - 115(remainder)= 13 = 0DH
+
+
+16. What is The Roland SCC-1B ?
+===============================
+
+  Tnx to Brian Moore, for the info on this one:
+
+  The SCC-1B is basically the same card. The "B" is for Bundled software
+  that comes with the card. This includes - Band-In-the-Box,
+  and BalladeGS.
+
+
+17. Does the SCC-1 require a DMA/IRQs ?
+======================================
+
+   The SCC-1 requires ONE (1) IRQ and an I/O Address.
+   Available IRQs: 2,3,4,5,6,7
+   Address: 330,332,334,336
+   Default: IRQ 2, I/O 330.
+
+   I was advised by several musicians from where I bought the card,
+   that IRQ 2 doesn't always work with DOS EXTENDED games/warez
+   so I use IRQ 5 at the moment - works great.
+  
+   It is VERY recommended not to change the I/O address.
+  
+   
++---------------------Adaptec SCSI Controller Warning---------------------+
+|                                                                         |
+|  I was told that these controllers default BOOT address is set          |
+|  to 330H, the same as the SCC-1. You must CHANGE it to avoid conflicts  |
+|  with the SCC-1. DO NOT CHANGE the SCC-1 Address !, many games          |
+|  do not have an option to change the I/O address , thus no music        |
+|  will be played. if you cannot change the BOOT address of your          |
+|  ADAPTEC card, contact ADAPTEC for an upgrade of your controller's ROM. |
+|                                                                         |
++-------------------------------------------------------------------------+
+
+
+18. What is in the SCC-1 package ?
+==================================
+
+    You Should get in the package:
+
+    5.25 + 3.5 Utility diskettes
+    Two midi cables (mini connectors)
+    Two MONO RCA to PL converters.
+    Two RCA cables - for Left and Right.
+    The Card itself :)
+    A yellow Manual.
+
+    Utility diskettes version 2.0 and up have an additional installation
+    info for the utilities.
+
+    >>> New SCC-1/Bs come with an addendum page that describes the
+        new tone table of 354 patches ( Although my SCC-1 has 354
+        sounds , i didn't get any addendum page :( )
+
+19. What does the UTILITY Diskette Contain ?
+============================================
+
+Both the SCC-1 and the SCC-1B contain almost the same utilities.
+The SCC-1B contains BalladGS and Band In the Box which are the extra
+software that SCC-1 users do not have.
+
+The BIG difference between the SCC-1 and the SCC-1B utilities 
+is some new MIDI SYSEX data for MT-32 Emulation, CM-64 Emulation,
+and a new DOS based MIDI Player that replaces the MPUPLAY.EXE in the SCC-1
+diskette. Also, the SCC-1B contains an MPU-401 Driver for Windows, which
+is not necessary anymore because all Windows version since 3.1 have this
+driver on the installation diskette.
+
+I will upload the new DOS based player and the new Emulation data
+from the SCC-1B diskette.
+
+Check ftp site -  128.252.135.4 /pub/MSDOS_UPLOADS/midi for the following:
+
+        1. SCC1B-U.ZIP - Contains the NEW DOS Player and the new SYSEX
+                         data for emulating the MT-32 and CM-64 modules.
+ 
+        2. SCC201U.ZIP - SCC-1 Utility diskette version 2.01.
+                         This one contains a newer CHKSCC program than
+                         the one in the SCC-1B diskette.
+
+>>>>> IF you have NEWER versions of the UTILITY diskette for the SCC-1
+      or SCC-1B please contact me!
+
+      My latest SCC-1 util diskette is 2.01
+      My latest SCC-1B util diskette is 1.00 (according to the time stamp)
+                         
+20. Does the SCC-1 support MIDI Aftertouch ?
+============================================
+
+    Yes, the SCC-1 supports MIDI Aftertouch, BUT - it is not turned
+    ON when you power-up your machine, i.e. you must send a SYSEX
+    message to enable it.
+
+    Some say its stupid, but Roland said that they didn't enable it so as
+    to conform to the GS standard.
+
+    Here are several Examples on how to enable Channel and Polyphonic
+    Aftertouch Receive. 
+
+    REMEMBER: Unless you specify the following SYSEX, the SCC-1
+    DOES NOT Respond to Aftertouch touch messages.
+
+    NOTE: - My keyboard doesn't support Aftertouch, so I don't have
+	    any way to test this. please contact me if it works.
+
+    h = Hexadecimal BASE.
+    d = Decimal BASE.
+
+    Enable Channel Aftertouch Receive on part x:
+
+			F0h 41h 10h 42h 12h 40h 1xh 04h 01h CSh F7h
+
+   x = Part number 1,2,3,4,5,6,7,8,9,0,A,B,C,D,E,F
+
+   CS = Checksum - calculated like this: 
+
+		Let say we enable it on part 1:
+		40h + 11h + 04h + 01h =56h
+		Convert 56h to decimal base = 86
+		then, 128 - 86 = 42.
+		now convert 42 decimal, to Hex base = 2A <- CHECKSUM !
+			
+		SYSEX WILL BE: F0 41 10 42 12 40 11 04 01 2A F7
+		
+	    
+
+    Enable Polyphonic Aftertouch Receive on part x:
+			
+			F0h 41h 10h 42h 12h 40h 1xh 07h 01h CSh F7h
+
+   x = Part number 1,2,3,4,5,6,7,8,9,0,A,B,C,D,E,F
+
+   CS = Checksum - calculated like this: 
+
+		Let say we enable it on part 1:
+		40h + 11h + 07h + 01h =59h
+		Convert 59h to decimal base = 89
+		than, 128 - 89 = 39
+		now convert 39 decimal, to Hex base = 27 <- CHECKSUM !
+		
+		SYSEX WILL BE: F0h 41h 10h 42h 12h 40h 11h 07h 01h 27h F7h
+
+			
+21. Does GS SYSEX and the effects work in DOS and in Windows ?
+==============================================================
+
+    Yes, the GS SYSEX and Effects are not platform dependent for
+    some cards like the AWE32. You can send/set the card
+    SYSEX in any platform, and in any mode.
+
+
+22. Does the sound quality of SCC-1 get reduced when I connect it through
+    a 2nd sound card ?  - (for example PAS16/SB16 and so on....)
+=========================================================================
+
+    Well, some patches in SCC-1 are too "loud" for onboard
+    mixers in the PAS16 and SB16. For this reason, I recommend
+    buying an External Mixer (powered one), with two Inputs
+    and ONE output , even the cheapest External mixer
+    will do better than the one on those cards.
+
+    When too loud patches are playing through the onboard mixers
+    you will get sound distortions - like clipping  - a "rrrrrr"
+    type sound.
+
+
+23. Are there any utilities for SCC-1 that I should get ?
+=========================================================
+    Well for those who plan to switch rapidly from GS mode
+    to MT-32 mode, I recommends to get a small program
+    called SCMODE.ZIP by Mark Fontana.
+
+    SCMODE switches between MT-32 mode and GS mode very quickly
+    as opposed to the utility that comes with the SCC-1
+    by Roland. SCMODE is for DOS only.
+ 
+    My brother and I have created a similar program for
+    Windows.
+
+    Due to many Sequencers and MIDI players that 
+    sometimes play wrong notes/events/instruments when
+    the previous MIDI was a GS MIDI that changed some
+    of the Sound Canvas parameters,  The next
+    MID file to play will sound WRONG unless
+    it will GS reset the Sound Canvas itself.
+
+    SCMODE.ZIP should be found at: ftp.cs.ruu.nl [131.211.80.17]
+    /pub/MIDI/PROGRAMS/MSDOS
+
+    GSRESET.ZIP (my program)
+    can be found at the same site at:/pub/MIDI/PROGRAMS/MSWINDOWS
+    and at 128.252.135.4 /pub/MSDOS_UPLOADS/midi
+
+    For those who wish to tweak the card's parameters, here
+    are several programs I encountered: <all of these are shareware>
+
+    Song Canvas     - DOS -        /pub/MIDI/PROGRAMS/MSDOS/CANVAS.ZIP
+
+    CanvasMan 4.62  - WIN -        This one is one heck of a GS editor,
+				   it also has CanQuest (TM), a huge
+				   help file on every parameter
+				   in the GS mode. HIGHLY RECOMMENDED.
+				   can be found at:
+				   128.252.135.4 (wuarchive),
+				   /pub/MSDOS_UPLOADS/canvas45.zip
+
+    PVICanvas       - WIN -        /pub/MIDI/PROGRAMS/MSWINDOWS/PVICANx.zip
+
+    PlayPak         - DOS -        This is a DOS based sequencer, which
+				   I found useful as a MIDI Player
+				   for DOS.
+
+				   I use it as my general MIDI
+				   player, because it does not
+				   analyze anything in the MID file,
+				   it just sends it over to MPU-401 unit,
+				   thus playing almost every MID
+				   file, in any format. (0,1 and MFF)
+				   Can be found at:
+				   ftp.cs.ruu.nl [131.211.80.17]
+				   /pub/MIDI/PROGRAMS/MSDOS/playpak.exe
+
+
+
+    If you have more, please contact me.
+    >>> I'm very interested in DOS based MIDI players.
+
+
+
+24. Where to get more information about the SCC-1 and other Roland
+    equipment.
+==================================================================
+
+    Roland's Address for Snail Mail:
+
+    Roland Corporation US
+    7200 Dominion Circle
+    Los Angeles,CA,90040-3696
+    U.S.A
+    TEL:        (213)-685-5141
+    FAX:        (213)-722-0911
+		(213)-726-8865
+    CompuServe: ID # 72662,376
+    Email -   : 72662.376@compuserve.com
+		Tnx to Eddie (lotter@cc.und.ac.za) for CIS ID#
+ 
+   ATTENTION: - I mailed this ID #, and so far have NOT got any answer.
+		 Check it out.
+
+    If anyone has Roland's BBS Number Please add it up
+    or contact me.
+
+
+25. Is there away to "preview" a Roland Sound Canvas without buying one ?
+=========================================================================
+
+Well Yes There is :)
+
+Thoes of you who wish to "preview" the SCC-1 and the Roland Sound
+Canvas patches, can do this if they have The 7th Guest game.
+
+On the 2nd CD, the music is recorderd ENTIERLY using a SC-55 with minor sound 
+processing devices (i.e effects makers and so on are not used).
+
+You can find the description of the songs, in the
+7th Guest manual.
+
+Ofcourse thoes of you who dont have this fine game, can always ask a decent
+music store to demonstrate one for you.(at least our Roland Branch in 
+Israel has a SC-55 and a SC-88 connected to a PC to demonstrate 
+it to customers.)
+
+APPENDIX A - Parameters that can be tweaked in GS mode.
+=======================================================
+
+
+I got several e-mails requesting some information regarding what
+parameters can be changed in GS mode.
+The following parameters are categorized according to CanvasMan 1.20
+for Windows. Each parameter has its limits.
+
+Basic Part Settings #1:
+				     Description (NOT FOR ALL)
+Part Level              0   - 127
+Part Panpot             -64 - 63     Pan value. - for Left. + for right
+Chorus Send             0   - 127    Chorus level at start up
+Reverb Send             0   - 127    Reverb Level at start up
+Key Shift               -24 - 24
+Pitch                  -120 - 120
+KeyRange Low            0   - 127
+KeyRange Hi             0   - 127
+Pitch Bend              -24 - 24
+Mod Depth               0   - 127
+Velocity S Depth        0   - 127    Higher value, gives louder sound
+Velocity S Offset       0   - 127
+
+Basic Part Setting #2:
+
+Mono/Poly               Mono/Poly
+Assign Mode             Limited Multi/Single/Full Multi
+Vibrato Rate            -50 - 50
+Vibrato Depth           -50 - 50
+Vibrato Delay           -50 - 50
+Cutoff Frequency        -50 - 16\
+Resonance               -50 - 50 \
+Attack Time             -50 - 50  > Changing those will create a NEW patch.
+Decay Time              -50 - 50 /
+Release Time            -50 - 50/
+
+Tone/Rhythm/Voice Reserve
+
+	Rhythm Maps #1 ---> You can use TWO Drum sets in one MIDI song
+	Rhythm Maps #2      if you will enable the Rhythm Maps On Part 11
+
+	Voice Reserve - See Stealing Notes/Voice Reserve.
+
+Scale Tuning Receive Flags
+
+Receive Flags
+	Pitch Band              ON/OFF
+	Channel Aftertouch        "
+	Program Change            "
+	Control Change            "
+	Polyphonic Aftertouch     "
+	Note Message              "
+	RPN                       "
+	NRPN                      "
+	Modulation                "
+	Volume                    "
+	Panpot                    "
+	Expression                "
+	Hold 1                    "
+	Portamento                "
+	Sostenuto                 "
+	Soft                      "
+
+Scale Tuning
+	C,C#,D,D#,E,F,F#,G,G#,A,A#,B - All from -64 to 63
+
+Modulation & Pitch Band - Same parameters for both, but different
+controllers.
+
+	Pitch                    -24 - 24
+	TVF Cut                    0 - 127
+	Ampl                       0 - 127
+	LFO 1 - RC,PD,TVF,TVA      0 - 127
+	LFO 2 - RC,PD,TVF,TVA      0 - 127
+
+Aftertouch - Channel And Polyphonic has the same parameters, but are
+different controllers.
+
+	Pitch                    -24 - 24
+	TVF Cut                    0 - 127
+	Ampl                       0 - 127
+	LFO 1 - RC,PD,TVF,TVA      0 - 127
+	LFO 2 - RC,PD,TVF,TVA      0 - 127
+
+
+Continuous Controllers 1 & 2
+
+	#                          0 - 127
+	Pitch                    -24 - 24
+	TVF Cut                    0 - 127
+	Ampl                       0 - 127
+	LFO 1 - RC,PD,TVF,TVA      0 - 127
+	LFO 2 - RC,PD,TVF,TVA      0 - 127
+
+
+
+APPENDIX B - Voice Reserve and Part Sounding Priority
+=====================================================
+
+The SCC-1 has a maximum of 24 notes, that can be played at once at the
+same time.
+
+Now, some patches (sounds) use TWO voices (i.e. notes) thus the Maximum
+polyphony will be reduced to 12 the moment such an instrument will be played.
+
+When the 24 notes limit is exceeded, the SCC-1 activates a sophisticated
+hardware based algorithm to steal notes from parts that are NOT vital
+for the piece at the moment, according to the LOWEST Part Sound Priority.
+
+
+Here is the Part Sound Priority scheme:
+
+      Part Priority Ranking       Part No.
+		 1                  10 (DRUMS)
+		 2                   1
+		 3                   2
+		 4                   3
+		 5                   4
+		 6                   5
+		 7                   6
+		 8                   7
+		 9                   8
+		10                   9
+		11                  11
+		12                  12
+		13                  13
+		14                  14
+		15                  15
+		16                  16     < - The SCC-1 starts stealing
+					       notes from HERE and goes
+					       UP !
+
+The SCC-1 has another algorithm, to deal with this kind of
+situation. It is Called Voice Reserve
+
+Voice Reserve - Voice Reserve is the capability of assigning a guaranteed
+		minimum number of voices for a given part just in case
+		the 24-voices limit is exceeded at some point.
+		For Example, Part 1 is set to Voice Reserve of 6,
+		which means that if all parts are trying
+		to use more than 24 voices at once, part 1 is assured
+		of getting at least 6 of them.
+
+		Voice Reserve ensures this minimum regardless of how Part
+		Priority is set.
+		The Voice Reserve number of each part is as follows, so
+		you can see again, why it is important to put the
+		most important parts in channels 1-10.
+
+		Part 1              6
+		Part 2-10           2
+		Part 11-16          0
+						(quoted entirely
+						    from page 12
+						    of the manual)
+
+Author's NOTE: With my over 20MB of MIDIs I haven't encountered even ONE
+	       MID song that activated the Part Sounding Priority
+	       or the Voice Reserve, or it was activated and it was
+	       so good that I haven't noticed anything while playing
+	       those MIDIs.
+
+
+APPENDIX C - MIDI Players WARNING !
+===================================
+
+To save you a lot of testing and time, several MIDI players
+usually in Windows, have a BUG or a problem while loading
+Standard type 0 MIDI files, and analyzing them.
+
+The player will load such a MIDI , analyze it and will play it
+WRONGLY causing glitches, missing notes.
+
+I encountered this with ONE MIDI file called L1002_06.MID.
+It messed up CakeWalk Pro 2.0, MidiSoft MIDI Recording Studio 1.08TC and
+Turtle Beach Karaoke.
+
+The ONLY Player in WINDOWS that played it right, was Window's
+own Media Player.
+
+
+APPENDIX D - MIDI file types.
+=============================
+
+I have encountered several MIDI file formats  while working with
+my SCC-1. Here are some:
+
+Standard MIDI File Type 0
+-------------------------
+These are MIDI files that were recorded and saved on 1 track using MULTIPLE
+channels.
+
+Unless you split that track in your sequencer you cannot edit it right.
+CakeWalk Pro 2.0, Cubase Score 1.0x DO NOT split those MIDIs.
+
+CakeWalk Pro 2.0 has a script in CAL language to split such a MIDI
+but it will not assign the instruments (PATCHES) for the tracks.
+
+The best SPLITTER for those MIDIs is MidiSoft Recording Studio,
+which automatically splits them, BUT doesn't always do it RIGHT, thus missing
+a note here and there.
+
+Tnx to Merlin Zener <merlin@merlin.edex.edu.au> for correcting me
+about this subject.
+
+
+Standard MIDI file type 1
+-------------------------
+The New standard that assigns each track and part to its own channel
+creating a very easy MID file to edit using any Sequencer.
+
+Standard MIDI file type 2
+-------------------------
+I have seen this message from WinJammer 2.24 when I tried to load
+a ripped MID file from LucasArt's Tie Fighter game.
+I have no idea what this file look likes because WinJammer refused
+to load this kind of file. Every other sequencer I have refused
+too , to load such files.
+
+
+APPENDIX E - Effects
+====================
+
+The SCC-1 Reverb and Chorus effects are global effects.
+You can not enable different types of each effect on different parts/channels
+in your MIDI piece.
+You can, however, specify the amount of each effect on any part of
+the piece
+
+Example: I have a MIDI song with - Piano, Guitar, and a Flute.
+I use Reverb type Hall 2, and the Reverb amount for the Piano
+is set to 40, Guitar to 10, and Flute to 64.
+
+
+APPENDIX F - Does the SCC-1 have some DOWN sides ?
+==================================================
+
+Well, this one is hard to answer, almost any product has
+some Ups and Downs.
+
+From MY (MY ONLY) opinion the only down side of the SCC-1 is its MAX Poly,
+limitation, of 24 notes at one time. Many NEW cards come with 28-32
+MAX Poly.
+
+But, On the other hand some musicians I talked to, say that
+the 24 MAX POLY and its sophisticated algorithms for manipulating
+cut-off notes, is so good that you cant hear them (cut-offs), 
+if your piece was created like the specs in the manual.
+
+As I mentioned before, till now (2 months after I purchased it, and
+abused it in any possible way :) ), I haven't had any problems with
+exceeding the 24 MAX Poly.
+
+
+APPENDIX G - Where to get the SCC-1 cheap (US ONLY) ?
+=====================================================
+
+Tnx goes to Chris Alleyne Chin <tomservo@crl.com> for the following
+info.
+
+Chris said that he bought it at Price Club, through the Quest automated 
+computer kiosk (a touch-screen ordering system). It was for $279, with
+approx. $3.00 in shipping/handling. 
+The package arrived three days later under Federal express at 
+his house.                                           
+
+Also he was told that the card can be found at CDW Computer Centers, Inc.
+at the same price. Here is the address and phones:
+
+(800)-326-4CDW
+FAX (708) 465-6800
+1020 E. Lake Cook Road
+Buffalo Grove, IL, 60089
+
+Note: Chris bought the SCC-1B, the one with the Extra software.
+
+I was told that Computability now sells the SCC-1 for $270 (without
+shipment), I don't have their address. Check it out.
+
+
+
+APPENDIX H - The Mystery of the Lost Patches !
+==============================================
+
+As the SCC-1 FAQ author I get many e-mails each month from users that 
+want to know more about it or/and  update the FAQ .
+
+Several days ago I got an Email from Thibet.Rungrotkitiy@students.miami.edu
+that he got a new page with his new SCC-1B manual. The new page contained
+a list of the NEW Tone Table that the new Roland GS devices now use.
+
+I asked him to send it over, and I tried the new patches (Banks) with
+my 4 month old SCC-1 (NOT B) and IT WORKS - I have a 354 Total sounds.
+Apparently Roland did not supply me with such an addendum to my SCC-1.
+
+Here are the added patches : (PC# = Program Change #, CC0 = Bank Change #)
+
+PC#	CCO	Tone name
+1	8	Piano 1w
+1	16	Piano 1d
+2	8	Piano 2w
+3	8	Piano 3w
+4	8 	Honky-tonk w
+5	16	E.Piano 1v
+5	24	60's E.Piano
+6	16	E.Piano 2v
+7	16	Harpsi.w
+7	24	Harpsi.o
+12	8	Vib.w
+13	8	Marinba w
+15	9	Carillon
+17	16	60's Organ 1
+17	32	Organ 4
+18	32	Organ 5
+20	16	Church Org.3
+25	16	Nylon Gt.0
+25	32	Nylon Gt.2
+29	16	Funk Gt.2
+39	1	Synth Bass 101
+40	16 	Rubber Bass
+41	8	Slow Violin
+53	32	Choir Aahs 2
+58	1	Trombone 2
+61	1	French Horn 2
+63	16	AnalogBrass 1
+64	16	AnalogBrass 2
+81	1	Square
+82	1	Saw
+82	8	Doctor
+99	1	Syn Mallet
+103	1	Echo Piano
+103	2	Echo Pan
+105	1	Sitar 2
+119	9	Elec Perc (Unreliable Pitch)
+124	3	Bird 2    (Unreliable Pitch)
+
+
+In Order to check that you have the new patches - load any GS based
+Sequencer like - MIDI Session/Recording Studio 1.0X or 
+Cake Walk Pro 3.0  (NOT 2.0)).
+
+Load a one Instrument MIDI file (like Fure-Elise that comes with MIDI 
+Session) and change the instrument to the new bank and program change.
+Play the MIDI. IF you don't hear a thing this means that there is no 
+instrument in the bank you have change to. Thus you have an OLDER SCC-1.
+
+MIDI SESSION Users - MIDI Session defines Program Change 0 as Piano 1 
+When you try the new patches find the Program change from this FAQ 
+(For Example 124) and instead of selecting ProgramChange 124 , 
+select Program Change 123 (i.e -1).Remember to Change the Bank #.
+                     
+CakeWalk Pro 3.0   - CakeWalk Pro 3.0 has an Instrument map for the GS mkII
+instruments, select it for all channels accept channel 10 (DRUMS).
+
+CakeWalk Pro 3.0 has some bugs in its Instrument map of the GS mkII - 
+Several instruments from this FAQ are NOT in the instrument map, 
+thus you must add them up.
+
+The easiest way to added the instruments is to backup and EDIT the file
+SRC.INS in the CakeWalk Pro 3.0 Directory, and find the current 
+Bank # (like 8,16,3 and so on), and add the new instrument. 
+
+Example:
+
+CakeWalk Pro 3.0 is missing the Bird 2 patch in bank #3 - Find Bank #3 in the 
+GS MKII section in the SRC.INS file, and add it up according
+to the numbers in the section.
+                     
+IMPORTANT: CakeWalk Pro 3.0 is like MIDI Session - Program Change 0 = Piano 1
+           thus any new patches you enter from this FAQ must be -1.
+           Instead of PC# 124 (Bird 2) enter PC # "123 = Bird 2"
+           
+Although CakeWalk Pro 3.0 is missing the NAMES (ONLY NAMES) of several 
+patches you can still use the patches as PCs (ProgramChange Numbers).
+For Example if you don't want to edit the SRC.INS file,
+Select BANK #3 in the patch window and Instrument number 123 (Remember
+to -1 each patch number).
+ 
+Okay, After you have completed editing the SRC.INS file, select Define 
+Instruments from the Instrument box. Press the Import button to
+Import SRC.INS file press Yes (because we are overwriting the previous
+configurations).
+                    
+Thats it.
+
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>     END OF FAQ     <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+,----------------------,----------------------------------------------,
+|-----    ,--          |Tal Barenboim, Technical Consultant.          |
+|  |      |__'         |talb@zeus.datasrv.co.il                       |
+|  |al    |__'arenboim |Roland SCC-1 FAQ Author,@comp.ibm.pc.soundcard|
+`----------------------'----------------------------------------------'
+
+
+
